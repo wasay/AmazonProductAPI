@@ -2,12 +2,12 @@
 
 return [
 
-    'credentials' => [
-        'api_key' => env('AWS_API_KEY', 'YOUR-AWS-KEY'),
-        'api_secret' => env('AWS_API_SECRET_KEY', 'DO-NOT-ADD-YOUR-API-SECRET-IN-THIS-FILE'),
+	'credentials'  => [
+		'api_key'    => env('AWS_API_KEY', 'YOUR-AWS-KEY'),
+		'api_secret' => env('AWS_API_SECRET_KEY', 'DO-NOT-ADD-YOUR-API-SECRET-IN-THIS-FILE'),
 
-        'associate_tag' => env('AWS_ASSOCIATE_TAG', 'YOUR-AMAZON-ASSOCIATE-ID'),
-    ],
+		'associate_tag' => env('AWS_ASSOCIATE_TAG', 'YOUR-AMAZON-ASSOCIATE-ID'),
+	],
 
 	// Valid names that can be used for search
 	'search_names' => [
@@ -58,6 +58,7 @@ return [
 	// Type = String
 	// Default = Small
 	// List Last Updated = 2018-03-10 (yyyy-mm-dd)
+
 	'response_groups' => [
 		'Accessories',
 		'AlternateVersions',
@@ -96,34 +97,7 @@ return [
 		'VariationOffers',
 		'VariationSummary',
 	],
+	
+	// add project custom settings below
 
-	// Locale Reference for the Product Advertising API
-	// https://docs.aws.amazon.com/AWSECommerceService/latest/DG/localevalues.html
-	// Default = if do specify BrowseNode = BestSeller
-	// Default = if do not specify BrowseNode = Relevance
-	// Type = String
-	// List Last Updated = 2018-03-10 (yyyy-mm-dd)
-	'sort_values' => [
-		'us' => [
-			'All' => '',
-			'Appliances' => [
-				'salesrank',
-				'pmrank',
-				'price',
-				'-price',
-				'relevancerank',
-				'reviewrank',
-				'reviewrank_authority',
-			],
-			'ArtsAndCrafts',
-			'Automotive',
-			'Baby',
-			'Beauty',
-			'Blended',
-			'Blended',
-			'Books',
-			// etc...
-			// this list is not complete
-		],
-	],
 ];

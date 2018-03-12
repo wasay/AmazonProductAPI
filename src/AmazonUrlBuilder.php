@@ -106,9 +106,22 @@ class AmazonUrlBuilder {
 	    // Create our new request
 	    foreach ($parameters as $parameter => $value) {
 	        // We need to be sure we properly encode the value of our parameter
-	        $parameter = str_replace("%7E", "~", rawurlencode($parameter));
-	        $value = str_replace("%7E", "~", rawurlencode($value));
-	        $requestArray[] = $parameter . '=' . $value;
+	        if (is_array($value))
+	        {
+	            $value_list = array();
+			    foreach ($value as $sub_parameter => $sub_value) {
+			        $sub_parameter = str_replace("%7E", "~", rawurlencode($sub_parameter));
+			        $sub_value = str_replace("%7E", "~", rawurlencode($sub_value));
+			        $value_list[] = $sub_value;
+			    }
+		        $requestArray[] = $parameter . '=' . implode(rawurlencode(','), $value_list);
+	        }
+	        else
+	        {
+		        $parameter = str_replace("%7E", "~", rawurlencode($parameter));
+		        $value = str_replace("%7E", "~", rawurlencode($value));
+		        $requestArray[] = $parameter . '=' . $value;
+	        }
 	    }
 
 	    // Put our & symbol at the beginning of each of our request variables and put it in a string
