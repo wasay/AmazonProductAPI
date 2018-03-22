@@ -36,7 +36,10 @@
   "scripts": {
     "amazonproductapi-cmd": [
       "@php -r \"file_exists('../../../.env') || copy('.env.example', '../../../.env');\"",
-      "@php -r \"file_exists('../../../config/amazonproductapi.php') || copy('config/amazonproductapi.php', '../../../config/amazonproductapi.php');\"",
+      "@php -r \"file_exists('../../../config/amazonproductapi.us.config.php') || copy('config/amazonproductapi.us.config.php', '../../../config/amazonproductapi.us.config.php');\"",
+      "@php -r \"file_exists('../../../config/amazonproductapi.us.references.php') || copy('config/amazonproductapi.us.references.php', '../../../config/amazonproductapi.us.references.php');\"",
+      "@php -r \"file_exists('../../../config/amazonproductapi.us.response.group.php') || copy('config/amazonproductapi.us.response.group.php', '../../../config/amazonproductapi.us.response.group.php');\"",
+      "@php -r \"file_exists('../../../config/amazonproductapi.us.search.names.php') || copy('config/amazonproductapi.us.search.names.php', '../../../config/amazonproductapi.us.search.names.php');\"",
       "echo \"update root .env file with Amazon API Credentials\"",
       "echo \"exclude .env file from git add/commit by adding the reference in .gitignore file\""
     ],
