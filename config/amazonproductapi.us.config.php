@@ -9,6 +9,7 @@ return [
 		'associate_tag' => env('AWS_ASSOCIATE_TAG', 'YOUR-AMAZON-ASSOCIATE-ID'),
 	],
 
+
 	// add your custom settings below //
 
 ];
