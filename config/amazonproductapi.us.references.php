@@ -16,13 +16,13 @@ return [
 		'Sort values',
 		'ItemSearch parameters'
 	],
-	'rows' => [
-		[
-			'All Departments',
-			'All',
-			'',
-			[],
-			[
+	'data' => [
+		'All' => [
+			'Department' => 'All Departments',
+			'SearchIndex' => 'All',
+			'RootBrowseNode' => '',
+			'SortValues' => [],
+			'ItemSearch' => [
 				'Availability',
 				'ItemPage',
 				'Keywords',
@@ -32,11 +32,11 @@ return [
 				'MinimumPrice',
 			],
 		],
-		[
-			'Appliances',
-			'Appliances',
-			'2619526011',
-			[
+		'Appliances' => [
+			'Department' => 'Appliances',
+			'SearchIndex' => 'Appliances',
+			'RootBrowseNode' => '2619526011',
+			'SortValues' => [
 				'salesrank',
 				'pmrank',
 				'price',
@@ -45,7 +45,7 @@ return [
 				'reviewrank',
 				'reviewrank_authority',
 			],
-			[
+			'ItemSearch' => [
 				'Availability',
 				'Brand',
 				'ItemPage',
@@ -59,11 +59,11 @@ return [
 				'Title',
 			],
 		],
-		[
-			'Arts, Crafts & Sewing',
-			'ArtsAndCrafts',
-			'2617942011',
-			[
+		'ArtsAndCrafts' => [
+			'Department' => 'Arts, Crafts & Sewing',
+			'SearchIndex' => 'ArtsAndCrafts',
+			'RootBrowseNode' => '2617942011',
+			'SortValues' => [
 				'salesrank',
 				'pmrank',
 				'reviewrank',
@@ -72,7 +72,7 @@ return [
 				'price',
 				'-price',
 			],
-			[
+			'ItemSearch' => [
 				'Availability',
 				'Brand',
 				'ItemPage',
@@ -86,11 +86,11 @@ return [
 				'Title',
 			],
 		],
-		[
-			'Automotive',
-			'Automotive',
-			'15690151',
-			[
+		'Automotive' => [
+			'Department' => 'Automotive',
+			'SearchIndex' => 'Automotive',
+			'RootBrowseNode' => '15690151',
+			'SortValues' => [
 				'salesrank',
 				'titlerank',
 				'-titlerank',
@@ -98,7 +98,7 @@ return [
 				'price',
 				'-price',
 			],
-			[
+			'ItemSearch' => [
 				'Availability',
 				'Brand',
 				'ItemPage',
@@ -112,18 +112,18 @@ return [
 				'Title',
 			],
 		],
-		[
-			'Baby',
-			'Baby',
-			'165797011',
-			[
+		'Baby' => [
+			'Department' => 'Baby',
+			'SearchIndex' => 'Baby',
+			'RootBrowseNode' => '165797011',
+			'SortValues' => [
 				'salesrank',
 				'psrank',
 				'titlerank',
 				'-price',
 				'price',
 			],
-			[
+			'ItemSearch' => [
 				'Author',
 				'Availability',
 				'Brand',
@@ -138,11 +138,11 @@ return [
 				'Title',
 			],
 		],
-		[
-			'Beauty',
-			'Beauty',
-			'11055981',
-			[
+		'Beauty' => [
+			'Department' => 'Beauty',
+			'SearchIndex' => 'Beauty',
+			'RootBrowseNode' => '11055981',
+			'SortValues' => [
 				'salesrank',
 				'-launch-date',
 				'sale-flag',
@@ -150,7 +150,7 @@ return [
 				'price',
 				'-price',
 			],
-			[
+			'ItemSearch' => [
 				'Author',
 				'Availability',
 				'Brand',
@@ -165,22 +165,22 @@ return [
 				'Title',
 			],
 		],
-		[
-			'',
-			'Blended',
-			'',
-			[],
-			[
+		'Blended' => [
+			'Department' => '',
+			'SearchIndex' => 'Blended',
+			'RootBrowseNode' => '',
+			'SortValues' => [],
+			'ItemSearch' => [
 				'Availability',
 				'ItemPage',
 				'Keywords'
 			],
 		],
-		[
-			'Books',
-			'Books',
-			'1000',
-			[
+		'Books' => [
+			'Department' => 'Books',
+			'SearchIndex' => 'Books',
+			'RootBrowseNode' => '1000',
+			'SortValues' => [
 				'relevancerank',
 				'salesrank',
 				'reviewrank',
@@ -194,7 +194,7 @@ return [
 				'-price',
 				'-publication_date',
 			],
-			[
+			'ItemSearch' => [
 				'Author',
 				'Availability',
 				'ItemPagev',
@@ -209,11 +209,11 @@ return [
 				'Title',
 			],
 		],
-		[
-			'Collectibles & Fine Arts',
-			'Collectibles',
-			'4991426011',
-			[
+		'Collectibles' => [
+			'Department' => 'Collectibles & Fine Arts',
+			'SearchIndex' => 'Collectibles',
+			'RootBrowseNode' => '4991426011',
+			'SortValues' => [
 				'salesrank',
 				'price',
 				'-price',
@@ -221,7 +221,7 @@ return [
 				'reviewrank_authority',
 				'relevancerank',
 			],
-			[
+			'ItemSearch' => [
 				'Artist',
 				'Author',
 				'Availability',
@@ -238,11 +238,11 @@ return [
 				'Title',
 			],
 		],
-		[
-			'Electronics',
-			'Electronics',
-			'493964',
-			[
+		'Electronics' => [
+			'Department' => 'Electronics',
+			'SearchIndex' => 'Electronics',
+			'RootBrowseNode' => '493964',
+			'SortValues' => [
 				'salesrank',
 				'price',
 				'-price',
@@ -250,7 +250,7 @@ return [
 				'pmrank',
 				'reviewrank',
 			],
-			[
+			'ItemSearch' => [
 				'Author',
 				'Availability',
 				'Brand',
@@ -265,11 +265,11 @@ return [
 				'Title',
 			],
 		],
-		[
-			'Clothing, Shoes & Jewelry',
-			'Fashion',
-			'7141124011',
-			[
+		'Fashion' => [
+			'Department' => 'Clothing, Shoes & Jewelry',
+			'SearchIndex' => 'Fashion',
+			'RootBrowseNode' => '7141124011',
+			'SortValues' => [
 				'relevancerank',
 				'popularity-rank',
 				'price',
@@ -277,7 +277,7 @@ return [
 				'reviewrank',
 				'launch-date',
 			],
-			[
+			'ItemSearch' => [
 				'Availability',
 				'Brand',
 				'ItemPage',
@@ -291,11 +291,11 @@ return [
 				'Title',
 			],
 		],
-		[
-			'Clothing, Shoes & Jewelry - Baby',
-			'FashionBaby',
-			'7147444011',
-			[
+		'FashionBaby' => [
+			'Department' => 'Clothing, Shoes & Jewelry - Baby',
+			'SearchIndex' => 'FashionBaby',
+			'RootBrowseNode' => '7147444011',
+			'SortValues' => [
 				'relevancerank',
 				'popularity-rank',
 				'price',
@@ -303,7 +303,7 @@ return [
 				'reviewrank',
 				'launch-date',
 			],
-			[
+			'ItemSearch' => [
 				'Availability',
 				'Brand',
 				'ItemPage',
@@ -317,11 +317,11 @@ return [
 				'Title',
 			],
 		],
-		[
-			'Clothing, Shoes & Jewelry - Boys',
-			'FashionBoys',
-			'7147443011',
-			[
+		'FashionBoys' => [
+			'Department' => 'Clothing, Shoes & Jewelry - Boys',
+			'SearchIndex' => 'FashionBoys',
+			'RootBrowseNode' => '7147443011',
+			'SortValues' => [
 				'relevancerank',
 				'popularity-rank',
 				'price',
@@ -329,7 +329,7 @@ return [
 				'reviewrank',
 				'launch-date',
 			],
-			[
+			'ItemSearch' => [
 				'Availability',
 				'Brand',
 				'ItemPage',
@@ -343,11 +343,11 @@ return [
 				'Title',
 			],
 		],
-		[
-			'Clothing, Shoes & Jewelry - Girls',
-			'FashionGirls',
-			'7147442011',
-			[
+		'FashionGirls' => [
+			'Department' => 'Clothing, Shoes & Jewelry - Girls',
+			'SearchIndex' => 'FashionGirls',
+			'RootBrowseNode' => '7147442011',
+			'SortValues' => [
 				'relevancerank',
 				'popularity-rank',
 				'price',
@@ -355,7 +355,7 @@ return [
 				'reviewrank',
 				'launch-date',
 			],
-			[
+			'ItemSearch' => [
 				'Availability',
 				'Brand',
 				'ItemPage',
@@ -369,11 +369,11 @@ return [
 				'Title',
 			],
 		],
-		[
-			'Clothing, Shoes & Jewelry - Men',
-			'FashionMen',
-			'7147441011',
-			[
+		'FashionMen' => [
+			'Department' => 'Clothing, Shoes & Jewelry - Men',
+			'SearchIndex' => 'FashionMen',
+			'RootBrowseNode' => '7147441011',
+			'SortValues' => [
 				'relevancerank',
 				'popularity-rank',
 				'price',
@@ -381,7 +381,7 @@ return [
 				'reviewrank',
 				'launch-date',
 			],
-			[
+			'ItemSearch' => [
 				'Availability',
 				'Brand',
 				'ItemPage',
@@ -395,11 +395,11 @@ return [
 				'Title',
 			],
 		],
-		[
-			'Clothing, Shoes & Jewelry - Women',
-			'FashionWomen',
-			'7147440011',
-			[
+		'FashionWomen' => [
+			'Department' => 'Clothing, Shoes & Jewelry - Women',
+			'SearchIndex' => 'FashionWomen',
+			'RootBrowseNode' => '7147440011',
+			'SortValues' => [
 				'relevancerank',
 				'popularity-rank',
 				'price',
@@ -407,7 +407,7 @@ return [
 				'reviewrank',
 				'launch-date',
 			],
-			[
+			'ItemSearch' => [
 				'Availability',
 				'Brand',
 				'ItemPage',
@@ -421,11 +421,11 @@ return [
 				'Title',
 			],
 		],
-		[
-			'Gift Cards',
-			'GiftCards',
-			'2864120011',
-			[
+		'GiftCards' => [
+			'Department' => 'Gift Cards',
+			'SearchIndex' => 'GiftCards',
+			'RootBrowseNode' => '2864120011',
+			'SortValues' => [
 				'relevancerank',
 				'salesrank',
 				'price',
@@ -433,7 +433,7 @@ return [
 				'reviewrank_authority',
 				'reviewrank',
 			],
-			[
+			'ItemSearch' => [
 				'Author',
 				'Availability',
 				'Brand',
@@ -447,11 +447,11 @@ return [
 				'Title',
 			],
 		],
-		[
-			'Grocery & Gourmet Food',
-			'Grocery',
-			'16310211',
-			[
+		'Grocery' => [
+			'Department' => 'Grocery & Gourmet Food',
+			'SearchIndex' => 'Grocery',
+			'RootBrowseNode' => '16310211',
+			'SortValues' => [
 				'relevancerank',
 				'salesrank',
 				'pricerank',
@@ -459,7 +459,7 @@ return [
 				'launch-date',
 				'sale-flag',
 			],
-			[
+			'ItemSearch' => [
 				'Author',
 				'Availability',
 				'Brand',
@@ -474,11 +474,11 @@ return [
 				'Title',
 			],
 		],
-		[
-			'Handmade',
-			'Handmade',
-			'11260433011',
-			[
+		'Handmade' => [
+			'Department' => 'Handmade',
+			'SearchIndex' => 'Handmade',
+			'RootBrowseNode' => '11260433011',
+			'SortValues' => [
 				'relevancerank',
 				'featured',
 				'price',
@@ -486,7 +486,7 @@ return [
 				'reviewrank',
 				'-release-date',
 			],
-			[
+			'ItemSearch' => [
 				'Availability',
 				'Brand',
 				'ItemPage',
@@ -499,11 +499,11 @@ return [
 				'Title',
 			],
 		],
-		[
-			'Health & Personal Care',
-			'HealthPersonalCare',
-			'3760931',
-			[
+		'HealthPersonalCare' => [
+			'Department' => 'Health & Personal Care',
+			'SearchIndex' => 'HealthPersonalCare',
+			'RootBrowseNode' => '3760931',
+			'SortValues' => [
 				'pmrank',
 				'salesrank',
 				'pricerank',
@@ -511,7 +511,7 @@ return [
 				'launch-date',
 				'sale-flag',
 			],
-			[
+			'ItemSearch' => [
 				'Author',
 				'Availability',
 				'Brand',
@@ -526,18 +526,18 @@ return [
 				'Title',
 			],
 		],
-		[
-			'Home & Kitchen',
-			'HomeGarden',
-			'1063498',
-			[
+		'HomeGarden' => [
+			'Department' => 'Home & Kitchen',
+			'SearchIndex' => 'HomeGarden',
+			'RootBrowseNode' => '1063498',
+			'SortValues' => [
 				'salesrank',
 				'price',
 				'-price',
 				'titlerank',
 				'-titlerank',
 			],
-			[
+			'ItemSearch' => [
 				'Author',
 				'Availability',
 				'Brand',
@@ -553,11 +553,11 @@ return [
 				'Title',
 			],
 		],
-		[
-			'Industrial & Scientific',
-			'Industrial',
-			'16310161',
-			[
+		'Industrial' => [
+			'Department' => 'Industrial & Scientific',
+			'SearchIndex' => 'Industrial',
+			'RootBrowseNode' => '16310161',
+			'SortValues' => [
 				'pmrank',
 				'salesrank',
 				'price',
@@ -565,7 +565,7 @@ return [
 				'titlerank',
 				'-titlerank',
 			],
-			[
+			'ItemSearch' => [
 				'Availability',
 				'ItemPage',
 				'Keywords',
@@ -578,11 +578,11 @@ return [
 				'Title',
 			],
 		],
-		[
-			'Kindle Store',
-			'KindleStore',
-			'133141011',
-			[
+		'KindleStore' => [
+			'Department' => 'Kindle Store',
+			'SearchIndex' => 'KindleStore',
+			'RootBrowseNode' => '133141011',
+			'SortValues' => [
 				'relevancerank',
 				'salesrank',
 				'-edition-sales-velocity',
@@ -591,7 +591,7 @@ return [
 				'reviewrank',
 				'daterank',
 			],
-			[
+			'ItemSearch' => [
 				'Author',
 				'Availability',
 				'ItemPage',
@@ -605,11 +605,11 @@ return [
 				'Title',
 			],
 		],
-		[
-			'Patio, Lawn & Garden',
-			'LawnAndGarden',
-			'3238155011',
-			[
+		'LawnAndGarden' => [
+			'Department' => 'Patio, Lawn & Garden',
+			'SearchIndex' => 'LawnAndGarden',
+			'RootBrowseNode' => '3238155011',
+			'SortValues' => [
 				'salesrank',
 				'price',
 				'-price',
@@ -617,7 +617,7 @@ return [
 				'reviewrank_authority',
 				'relevancerank',
 			],
-			[
+			'ItemSearch' => [
 				'Author',
 				'Availability',
 				'Brand',
@@ -632,11 +632,11 @@ return [
 				'Title',
 			],
 		],
-		[
-			'Luggage & Travel Gear',
-			'Luggage',
-			'9479199011',
-			[
+		'Luggage' => [
+			'Department' => 'Luggage & Travel Gear',
+			'SearchIndex' => 'Luggage',
+			'RootBrowseNode' => '9479199011',
+			'SortValues' => [
 				'relevancerank',
 				'popularity-rank',
 				'price',
@@ -644,7 +644,7 @@ return [
 				'reviewrank',
 				'launch-date',
 			],
-			[
+			'ItemSearch' => [
 				'Availability',
 				'Brand',
 				'Condition',
@@ -659,11 +659,11 @@ return [
 				'Title',
 			],
 		],
-		[
-			'Magazine Subscriptions',
-			'Magazines',
-			'599872',
-			[
+		'Magazines' => [
+			'Department' => 'Magazine Subscriptions',
+			'SearchIndex' => 'Magazines',
+			'RootBrowseNode' => '599872',
+			'SortValues' => [
 				'subslot-salesrank',
 				'reviewrank',
 				'price',
@@ -674,7 +674,7 @@ return [
 				'-unit-sales',
 				'-publication_date',
 			],
-			[
+			'ItemSearch' => [
 				'Author',
 				'Availability',
 				'ItemPage',
@@ -688,11 +688,11 @@ return [
 				'Title',
 			],
 		],
-		[
-			'',
-			'Marketplace',
-			'',
-			[
+		'Marketplace' => [
+			'Department' => '',
+			'SearchIndex' => 'Marketplace',
+			'RootBrowseNode' => '',
+			'SortValues' => [
 				'relevancerank',
 				'pmrank',
 				'salesrank',
@@ -702,13 +702,13 @@ return [
 				'-titlerank',
 				'-launch-date',
 			],
-			[],
+			'ItemSearch' => [],
 		],
-		[
-			'',
-			'Merchants',
-			'',
-			[
+		'Merchants' => [
+			'Department' => '',
+			'SearchIndex' => 'Merchants',
+			'RootBrowseNode' => '',
+			'SortValues' => [
 				'relevance',
 				'relevancerank',
 				'pmrank',
@@ -720,7 +720,7 @@ return [
 				'launch-date',
 				'-launch-date',
 			],
-			[
+			'ItemSearch' => [
 				'Author',
 				'Availability',
 				'Brand',
@@ -735,11 +735,11 @@ return [
 				'Title',
 			],
 		],
-		[
-			'Apps & Games',
-			'MobileApps',
-			'2350150011',
-			[
+		'MobileApps' => [
+			'Department' => 'Apps & Games',
+			'SearchIndex' => 'MobileApps',
+			'RootBrowseNode' => '2350150011',
+			'SortValues' => [
 				'relevancerank',
 				'pmrank',
 				'price',
@@ -747,7 +747,7 @@ return [
 				'reviewrank',
 				'reviewrank_authority',
 			],
-			[
+			'ItemSearch' => [
 				'Author',
 				'Availability',
 				'Brand',
@@ -762,11 +762,11 @@ return [
 				'Title',
 			],
 		],
-		[
-			'Movies & TV',
-			'Movies',
-			'2625374011',
-			[
+		'Movies' => [
+			'Department' => 'Movies & TV',
+			'SearchIndex' => 'Movies',
+			'RootBrowseNode' => '2625374011',
+			'SortValues' => [
 				'relevancerank',
 				'featured',
 				'price',
@@ -774,7 +774,7 @@ return [
 				'reviewrank',
 				'-release-date',
 			],
-			[
+			'ItemSearch' => [
 				'Author',
 				'Availability',
 				'ItemPage',
@@ -788,18 +788,18 @@ return [
 				'Title',
 			],
 		],
-		[
-			'Digital Music',
-			'MP3Downloads',
-			'624868011',
-			[
+		'MP3Downloads' => [
+			'Department' => 'Digital Music',
+			'SearchIndex' => 'MP3Downloads',
+			'RootBrowseNode' => '624868011',
+			'SortValues' => [
 				'salesrank',
 				'price',
 				'-price',
 				'-releasedate',
 				'relevancerank',
 			],
-			[
+			'ItemSearch' => [
 				'Author',
 				'Availability',
 				'ItemPage',
@@ -812,11 +812,11 @@ return [
 				'Title',
 			],
 		],
-		[
-			'CDs & Vinyl',
-			'Music',
-			'301668',
-			[
+		'Music' => [
+			'Department' => 'CDs & Vinyl',
+			'SearchIndex' => 'Music',
+			'RootBrowseNode' => '301668',
+			'SortValues' => [
 				'psrank',
 				'salesrank',
 				'price',
@@ -831,7 +831,7 @@ return [
 				'-releasedate',
 				'relevancerank',
 			],
-			[
+			'ItemSearch' => [
 				'Artist',
 				'Availability',
 				'ItemPage',
@@ -844,11 +844,11 @@ return [
 				'Title',
 			],
 		],
-		[
-			'Musical Instruments',
-			'MusicalInstruments',
-			'11965861',
-			[
+		'MusicalInstruments' => [
+			'Department' => 'Musical Instruments',
+			'SearchIndex' => 'MusicalInstruments',
+			'RootBrowseNode' => '11965861',
+			'SortValues' => [
 				'pmrank',
 				'salesrank',
 				'price',
@@ -856,7 +856,7 @@ return [
 				'-launch-date',
 				'sale-flag',
 			],
-			[
+			'ItemSearch' => [
 				'Author',
 				'Availability',
 				'Brand',
@@ -871,11 +871,11 @@ return [
 				'Title',
 			],
 		],
-		[
-			'Office Products',
-			'OfficeProducts',
-			'1084128',
-			[
+		'OfficeProducts' => [
+			'Department' => 'Office Products',
+			'SearchIndex' => 'OfficeProducts',
+			'RootBrowseNode' => '1084128',
+			'SortValues' => [
 				'pmrank',
 				'salesrank',
 				'price',
@@ -883,7 +883,7 @@ return [
 				'reviewrank',
 				'titlerank',
 			],
-			[
+			'ItemSearch' => [
 				'Author',
 				'Availability',
 				'Brand',
@@ -898,17 +898,17 @@ return [
 				'Title',
 			],
 		],
-		[
-			'Prime Pantry',
-			'Pantry',
-			'N/A',
-			[
+		'Pantry' => [
+			'Department' => 'Prime Pantry',
+			'SearchIndex' => 'Pantry',
+			'RootBrowseNode' => 'N/A',
+			'SortValues' => [
 				'relevancerank',
 				'price',
 				'-price',
 				'reviewrank',
 			],
-			[
+			'ItemSearch' => [
 				'Availability',
 				'ItemPage',
 				'Keywords',
@@ -921,18 +921,18 @@ return [
 				'Title',
 			],
 		],
-		[
-			'Computers',
-			'PCHardware',
-			'541966',
-			[
+		'PCHardware' => [
+			'Department' => 'Computers',
+			'SearchIndex' => 'PCHardware',
+			'RootBrowseNode' => '541966',
+			'SortValues' => [
 				'psrank',
 				'salesrank',
 				'price',
 				'-price',
 				'titlerank',
 			],
-			[
+			'ItemSearch' => [
 				'Author',
 				'Availability',
 				'Brand',
@@ -947,11 +947,11 @@ return [
 				'Title',
 			],
 		],
-		[
-			'Pet Supplies',
-			'PetSupplies',
-			'2619534011',
-			[
+		'PetSupplies' => [
+			'Department' => 'Pet Supplies',
+			'SearchIndex' => 'PetSupplies',
+			'RootBrowseNode' => '2619534011',
+			'SortValues' => [
 				'salesrank',
 				'price',
 				'-price',
@@ -962,7 +962,7 @@ return [
 				'reviewrank',
 				'reviewrank_authority',
 			],
-			[
+			'ItemSearch' => [
 				'Author',
 				'Availability',
 				'Brand',
@@ -977,18 +977,18 @@ return [
 				'Title',
 			],
 		],
-		[
-			'Software',
-			'Software',
-			'409488',
-			[
+		'Software' => [
+			'Department' => 'Software',
+			'SearchIndex' => 'Software',
+			'RootBrowseNode' => '409488',
+			'SortValues' => [
 				'pmrank',
 				'salesrank',
 				'price',
 				'-price',
 				'titlerank',
 			],
-			[
+			'ItemSearch' => [
 				'Author',
 				'Availability',
 				'Brand',
@@ -1003,11 +1003,11 @@ return [
 				'Title',
 			],
 		],
-		[
-			'Sports & Outdoors',
-			'SportingGoods',
-			'3375301',
-			[
+		'SportingGoods' => [
+			'Department' => 'Sports & Outdoors',
+			'SearchIndex' => 'SportingGoods',
+			'RootBrowseNode' => '3375301',
+			'SortValues' => [
 				'relevancerank',
 				'relevance-fs-rank',
 				'price',
@@ -1019,7 +1019,7 @@ return [
 				'sale-flag',
 				'reviewrank_authority',
 			],
-			[
+			'ItemSearch' => [
 				'Author',
 				'Availability',
 				'Brand',
@@ -1034,11 +1034,11 @@ return [
 				'Title',
 			],
 		],
-		[
-			'Tools & Home Improvement',
-			'Tools',
-			'468240',
-			[
+		'Tools' => [
+			'Department' => 'Tools & Home Improvement',
+			'SearchIndex' => 'Tools',
+			'RootBrowseNode' => '468240',
+			'SortValues' => [
 				'pmrank',
 				'salesrank',
 				'price',
@@ -1046,7 +1046,7 @@ return [
 				'titlerank',
 				'-titlerank',
 			],
-			[
+			'ItemSearch' => [
 				'Author',
 				'Availability',
 				'Brand',
@@ -1061,11 +1061,11 @@ return [
 				'Title',
 			],
 		],
-		[
-			'Toys & Games',
-			'Toys',
-			'165795011',
-			[
+		'Toys' => [
+			'Department' => 'Toys & Games',
+			'SearchIndex' => 'Toys',
+			'RootBrowseNode' => '165795011',
+			'SortValues' => [
 				'pmrank',
 				'salesrank',
 				'price',
@@ -1073,7 +1073,7 @@ return [
 				'titlerank',
 				'-age-min',
 			],
-			[
+			'ItemSearch' => [
 				'Availability',
 				'ItemPage',
 				'Keywords',
@@ -1085,11 +1085,11 @@ return [
 				'Title',
 			],
 		],
-		[
-			'Amazon Instant Video',
-			'UnboxVideo',
-			'2858778011',
-			[
+		'UnboxVideo' => [
+			'Department' => 'Amazon Instant Video',
+			'SearchIndex' => 'UnboxVideo',
+			'RootBrowseNode' => '2858778011',
+			'SortValues' => [
 				'relevancerank',
 				'salesrank',
 				'price',
@@ -1098,7 +1098,7 @@ return [
 				'-video-release-date',
 				'-launch-date',
 			],
-			[
+			'ItemSearch' => [
 				'Actor',
 				'AudienceRating',
 				'Availability',
@@ -1114,17 +1114,17 @@ return [
 				'Title',
 			],
 		],
-		[
-			'Vehicles',
-			'Vehicles',
-			'10677470011',
-			[
+		'Vehicles' => [
+			'Department' => 'Vehicles',
+			'SearchIndex' => 'Vehicles',
+			'RootBrowseNode' => '10677470011',
+			'SortValues' => [
 				'relevancerank',
 				'featured',
 				'reviewrank',
 				'-release-date',
 			],
-			[
+			'ItemSearch' => [
 				'Availability',
 				'Brand',
 				'ItemPage',
@@ -1137,18 +1137,18 @@ return [
 				'Title'
 			],
 		],
-		[
-			'Video Games',
-			'VideoGames',
-			'11846801',
-			[
+		'VideoGames' => [
+			'Department' => 'Video Games',
+			'SearchIndex' => 'VideoGames',
+			'RootBrowseNode' => '11846801',
+			'SortValues' => [
 				'pmrank',
 				'salesrank',
 				'price',
 				'-price',
 				'titlerank',
 			],
-			[
+			'ItemSearch' => [
 				'Author',
 				'Availability',
 				'Brand',
@@ -1163,11 +1163,11 @@ return [
 				'Title',
 			],
 		],
-		[
-			'Wine',
-			'Wine',
-			'2983386011',
-			[
+		'Wine' => [
+			'Department' => 'Wine',
+			'SearchIndex' => 'Wine',
+			'RootBrowseNode' => '2983386011',
+			'SortValues' => [
 				'relevancerank',
 				'featured',
 				'price',
@@ -1175,7 +1175,7 @@ return [
 				'reviewrank',
 				'reviewscore',
 			],
-			[
+			'ItemSearch' => [
 				'Author',
 				'Availability',
 				'ItemPage',
@@ -1189,11 +1189,11 @@ return [
 				'Title',
 			],
 		],
-		[
-			'Cell Phones & Accessories',
-			'Wireless',
-			'2335753011',
-			[
+		'Wireless' => [
+			'Department' => 'Cell Phones & Accessories',
+			'SearchIndex' => 'Wireless',
+			'RootBrowseNode' => '2335753011',
+			'SortValues' => [
 				'salesrank',
 				'pricerank',
 				'inverse-pricerank',
@@ -1202,7 +1202,7 @@ return [
 				'daterank',
 				'reviewrank',
 			],
-			[
+			'ItemSearch' => [
 				'Author',
 				'Availability',
 				'ItemPage',
