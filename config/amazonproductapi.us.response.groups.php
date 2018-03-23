@@ -47,12 +47,11 @@ return [
 	],
 
 	'Featured' => [
-		'Images',
 		'ItemAttributes',
+		'Large',
 		'Medium',
-		'OfferSummary',
-		'PromotionSummary',
-		'VariationSummary',
+		'Reviews',
+		'Small',
 	],
 
 ];
