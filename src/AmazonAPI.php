@@ -19,66 +19,34 @@ class AmazonAPI
 	private $dataTransformer = NULL;
 
 	// Valid names that can be used for search
-	// This variable can be set to NULL
-	private $mValidSearchNames = array(
-		'All',
-		'Apparel',
-		'Appliances',
-		'Automotive',
-		'Baby',
-		'Beauty',
-		'Blended',
-		'Books',
-		'Classical',
-		'DVD',
-		'Electronics',
-		'Grocery',
-		'HealthPersonalCare',
-		'HomeGarden',
-		'HomeImprovement',
-		'Jewelry',
-		'KindleStore',
-		'Kitchen',
-		'Lighting',
-		'Marketplace',
-		'MP3Downloads',
-		'Music',
-		'MusicTracks',
-		'MusicalInstruments',
-		'OfficeProducts',
-		'OutdoorLiving',
-		'Outlet',
-		'PetSupplies',
-		'PCHardware',
-		'Shoes',
-		'Software',
-		'SoftwareVideoGames',
-		'SportingGoods',
-		'Tools',
-		'Toys',
-		'VHS',
-		'Video',
-		'VideoGames',
-		'Watches'
-	);
-
-
+	private $mValidSearchNames = NULL;
 	private $mValidResponseGroups = NULL;
 	private $mValidSortValues = NULL;
 
 	private $mErrors = array();
 
-	public function __construct($urlBuilder, $outputType, $searchNames = NULL, $responseGroups = NULL, $sortValues = NULL) {
+	public function __construct($urlBuilder, $outputType,
+		$params = array(
+			'searchNames' => NULL,
+			'responseGroups' => NULL,
+			'sortValues' => NULL,
+		)
+	) {
 		$this->urlBuilder = $urlBuilder;
 		$this->dataTransformer = DataTransformerFactory::create($outputType);
 
-		if ( ! empty($searchNames) )
+		if ( isset($params['searchNames']) && ! empty($params['searchNames']) )
 		{
-			$this->mValidSearchNames = $searchNames;
+			$this->mValidSearchNames = $params['searchNames'];
 		}
-
-		$this->mValidResponseGroups = $responseGroups;
-		$this->mValidSortValues = $sortValues;
+		if ( isset($params['responseGroups']) && ! empty($params['responseGroups']) )
+		{
+			$this->mValidResponseGroups = $params['responseGroups'];
+		}
+		if ( isset($params['sortValues']) && ! empty($params['sortValues']) )
+		{
+			$this->mValidSortValues = $params['sortValues'];
+		}
 	}
 
 	public function GetValidSearchNames() {
@@ -100,26 +68,40 @@ class AmazonAPI
 	 * @param	searchIndex			Name of search index (category) requested. NULL if searching all.
 	 * @param	sortBy				Category to sort by, only used if searchIndex is not 'All'
 	 * @param	condition			Condition of item. Valid conditions : Used, Collectible, Refurbished, All
-	 * @param	responseGroups			Response group's for results. Valid conditions : See mValidResponseGroups
+	 * @param	params				Additional params
 	 *
 	 * @return	mixed				SimpleXML object, array of data or false if failure.
 	 */
-	public function ItemSearch($keywords, $searchIndex = NULL, $sortBy = NULL, $condition = 'New', $responseGroups = NULL) {
-
-		if (empty($responseGroups))
-		{
-			// if empty, set default
-			$responseGroups = 'ItemAttributes,Offers,Images';
-		}
-
+	public function ItemSearch($keywords, $searchIndex = NULL, $sortBy = NULL, $condition = 'New',
+		$params = array(
+			'ResponseGroup' => 'ItemAttributes,Offers,Images',
+			'Availability' => NULL,
+			'IncludeReviewsSummary' => NULL,
+			'ItemPage' => NULL,
+			'MinimumPrice' => NULL,
+			'MaximumPrice' => NULL,
+			'TruncateReviewsAt' => NULL,
+		)
+	) {
 		$params = array(
 			'Operation' => 'ItemSearch',
-			'ResponseGroup' => $responseGroups,
+			//'ResponseGroup' => 'ItemAttributes,Offers,Images',
 			'Keywords' => $keywords,
 			'Condition' => $condition,
 			'SearchIndex' => empty($searchIndex) ? 'All' : $searchIndex,
 			'Sort' => $sortBy && ($searchIndex != 'All') ? $sortBy : NULL
 		);
+
+		if (is_array($params))
+		{
+			foreach ($params as $param_key => $param)
+			{
+				if ( $param != NULL && !empty($param))
+				{
+					$params[$param_key] = $param;
+				}
+			}
+		}
 
 		return $this->MakeAndParseRequest($params);
 	}
@@ -129,30 +111,35 @@ class AmazonAPI
 	 *
 	 * @param	asinList			Either a single ASIN or an array of ASINs
 	 * @param	onlyFromAmazon		True if only requesting items from Amazon and not 3rd party vendors
-	 * @param	responseGroup		Response group for results. Valid conditions : See mValidResponseGroups
-	 * @param	reviewSort			Review sort order for results. Valid conditions : See mValidReviewSorts
+	 * @param	params			Additional params
 	 *
 	 * @return	mixed				SimpleXML object, array of data or false if failure.
 	 */
-	public function ItemLookup($asinList, $onlyFromAmazon = false, $responseGroup = NULL, $reviewSort = NULL) {
+	public function ItemLookup($asinList, $onlyFromAmazon = false,
+		$params = array(
+			'ResponseGroup' => 'ItemAttributes,Offers,Reviews,Images,EditorialReview',
+			'ReviewSort' => '-OverallRating',
+		)
+	) {
 		if (is_array($asinList)) {
 			$asinList = implode(',', $asinList);
 		}
-		if (empty($responseGroup))
+
+		if (is_array($params))
 		{
-			// if empty, set default
-			$responseGroup = 'ItemAttributes,Offers,Reviews,Images,EditorialReview';
-		}
-		if (empty($reviewSort))
-		{
-			// if empty, set default
-			$reviewSort = '-OverallRating';
+			foreach ($params as $param_key => $param)
+			{
+				if ( $param != NULL && !empty($param))
+				{
+					$params[$param_key] = $param;
+				}
+			}
 		}
 
 		$params = array(
 			'Operation' => 'ItemLookup',
-			'ResponseGroup' => $responseGroup,
-			'ReviewSort' => $reviewSort,
+			//'ResponseGroup' => $responseGroup,
+			//'ReviewSort' => $reviewSort,
 			'ItemId' => $asinList,
 			'MerchantId' => ($onlyFromAmazon == true) ? 'Amazon' : 'All'
 		);

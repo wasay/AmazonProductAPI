@@ -106,7 +106,8 @@ class AmazonUrlBuilder {
 	    // Create our new request
 	    foreach ($parameters as $parameter => $value) {
 	        // We need to be sure we properly encode the value of our parameter
-	        if (is_array($value))
+	        // if value is array, then loop over the value array
+			if (is_array($value))
 	        {
 	            $value_list = array();
 			    foreach ($value as $sub_parameter => $sub_value) {
