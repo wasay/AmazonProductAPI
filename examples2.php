@@ -9,8 +9,9 @@ use MarcL\AmazonUrlBuilder;
 //include_once('./secretKeys.php');
 
 // get amazon product api valid attributes
-$api_locale = config('amazonproductapi.config');
-$configAmazonProductAPI = config('amazonproductapi.'.$api_locale['locale'].'.config');
+$config_locale = config('amazonproductapi.config');
+$api_locale = $config_locale['locale'];
+$configAmazonProductAPI = config('amazonproductapi.'.$api_locale.'.config');
 
 // Keep these safe
 $keyId = $configAmazonProductAPI['credentials']['api_key'];
@@ -21,13 +22,13 @@ $associateId = $configAmazonProductAPI['credentials']['associate_tag'];
 
 
 // get amazon product api valid attributes
-$config_response_groups = config('amazonproductapi.us.response.groups');
+$config_response_groups = config('amazonproductapi.'.$api_locale.'.response.groups');
 $response_groups = $config_response_groups['Featured'];
 
-$config_search_names = config('amazonproductapi.us.search.names');
+$config_search_names = config('amazonproductapi.'.$api_locale.'.search.names');
 $search_names = array($config_search_names['Apparel']);
 
-$config_references = config('amazonproductapi.us.references');
+$config_references = config('amazonproductapi.'.$api_locale.'.references');
 $sort_values = $config_references['data']['Fashion']['SortValues'][0];
 
 // Setup a new instance of the AmazonUrlBuilder with your keys
