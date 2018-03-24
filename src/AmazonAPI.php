@@ -73,7 +73,7 @@ class AmazonAPI
 	 * @return	mixed				SimpleXML object, array of data or false if failure.
 	 */
 	public function ItemSearch($keywords, $searchIndex = NULL, $sortBy = NULL, $condition = 'New',
-		$params = array(
+		$item_search_params = array(
 			'ResponseGroup' => 'ItemAttributes,Offers,Images',
 			'Availability' => NULL,
 			'IncludeReviewsSummary' => NULL,
@@ -92,13 +92,13 @@ class AmazonAPI
 			'Sort' => $sortBy && ($searchIndex != 'All') ? $sortBy : NULL
 		);
 
-		if (is_array($params))
+		if (is_array($item_search_params))
 		{
-			foreach ($params as $param_key => $param)
+			foreach ($item_search_params as $item_key => $item)
 			{
-				if ( $param != NULL && !empty($param))
+				if ( $item != NULL && !empty($item))
 				{
-					$params[$param_key] = $param;
+					$params[$item_key] = $item;
 				}
 			}
 		}
@@ -116,24 +116,13 @@ class AmazonAPI
 	 * @return	mixed				SimpleXML object, array of data or false if failure.
 	 */
 	public function ItemLookup($asinList, $onlyFromAmazon = false,
-		$params = array(
+		$item_search_params = array(
 			'ResponseGroup' => 'ItemAttributes,Offers,Reviews,Images,EditorialReview',
 			'ReviewSort' => '-OverallRating',
 		)
 	) {
 		if (is_array($asinList)) {
 			$asinList = implode(',', $asinList);
-		}
-
-		if (is_array($params))
-		{
-			foreach ($params as $param_key => $param)
-			{
-				if ( $param != NULL && !empty($param))
-				{
-					$params[$param_key] = $param;
-				}
-			}
 		}
 
 		$params = array(
@@ -143,6 +132,17 @@ class AmazonAPI
 			'ItemId' => $asinList,
 			'MerchantId' => ($onlyFromAmazon == true) ? 'Amazon' : 'All'
 		);
+
+		if (is_array($item_search_params))
+		{
+			foreach ($item_search_params as $item_key => $item)
+			{
+				if ( $item != NULL && !empty($item))
+				{
+					$params[$item_key] = $item;
+				}
+			}
+		}
 
 		return $this->MakeAndParseRequest($params);
 	}

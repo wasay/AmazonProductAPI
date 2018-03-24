@@ -47,10 +47,17 @@ return [
 	],
 
 	'Featured' => [
+		'Images',
 		'ItemAttributes',
 		'Large',
 		'Medium',
+		'Offers',
+		'OfferFull',
+		'OfferListings',
+		'OfferSummary',
+		'PromotionSummary',
 		'Reviews',
+		'SalesRank',
 		'Small',
 	],
 
