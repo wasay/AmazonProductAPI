@@ -46,6 +46,21 @@ return [
 		'VariationSummary',
 	],
 
+	'List' => [
+		'Images',
+		'ItemAttributes',
+		'Large',
+		'Medium',
+		'Offers',
+		'OfferFull',
+		'OfferListings',
+		'OfferSummary',
+		'PromotionSummary',
+		'Reviews',
+		'SalesRank',
+		'Small',
+	],
+
 	'Featured' => [
 		'Images',
 		'ItemAttributes',
